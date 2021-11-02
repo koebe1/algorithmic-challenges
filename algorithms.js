@@ -25,7 +25,6 @@ function gridChallenge(grid) {
 }
 
 // sherlock and array
-
 function balancedSums(arr) {
     // Write your code here
     let sum = arr.reduce((prev, curr) => prev+curr);
@@ -38,4 +37,20 @@ function balancedSums(arr) {
         leftSum += arr[i];
     };
     return 'NO';
+}
+
+// recursiv digit sum
+
+function superDigit(n, k) {
+    // Write your code here
+    
+    if(n.length === 1) {
+        return n;
+    }
+    
+    let arr = [...n];
+    let sum = arr.reduce((a,b) => parseInt(a) + parseInt(b)).toString()*k;
+    
+    return superDigit(sum.toString(),1)
+    
 }
