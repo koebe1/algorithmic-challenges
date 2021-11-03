@@ -88,3 +88,38 @@ function counterGame(n) {
     return counter % 2 === 0 ? "Richard" : "Louise";
     
 }
+
+// sum vs xor
+function sumXor(n) {
+    
+    /* WORKS BUT TOO SLOW FOR BIG NUMBERS
+    // Write your code here
+    let counter = 0;
+    
+    // 0 <= x <= n
+    for (let i=0; i <= n; i++) {
+
+        if (n+i == (n^i)) {
+            counter++;
+        }        
+    }
+    return counter;
+    */
+ 
+    
+    // numbers that meet criteria have a zeros 
+    // where there are ones in n in the binary representation
+    // ---> see bitwise operator ^ for criteria
+    // 10010
+    // 0**0* -> 2 of the power of 3 
+    const binary = n.toString(2);
+    const zeros = binary.split("0").length-1;
+    
+    // special case 0
+    // 0+0 === 0 and 0^0 === 0
+    if (n === 0) {
+        return 1;
+    } else {
+        return 2**zeros;
+    }
+}
