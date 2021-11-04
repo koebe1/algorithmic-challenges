@@ -118,25 +118,42 @@ function sumXor(n) {
   }
 }
 
-//plaindrome index ONLY MEETING 12  OF 14 TEST CASES
+//palindrome index ONLY MEETING 12  OF 14 TEST CASES
 function palindromeIndex(str) {
-    // Write your code here
-  
-      let position = -1;
-      let start = 0;
-      let end = 0;
-    
-      for (let i = 0; i <Math.floor(str.length/2); i++) {
-        if (str[i+start] !== str[str.length - 1 - i + end]) {
-          if(str[i+start + 1] === str[str.length - 1 - i + end]) {
-              position = i;
-              start = 1;
-          } else if (str[i+start] === str[str.length - 2 - i + end]) {
-              position = str.length-1-i;
-              end = -1;
-          } 
-        }
+  // Write your code here
+
+  let position = -1;
+  let start = 0;
+  let end = 0;
+
+  for (let i = 0; i < Math.floor(str.length / 2); i++) {
+    if (str[i + start] !== str[str.length - 1 - i + end]) {
+      if (str[i + start + 1] === str[str.length - 1 - i + end]) {
+        position = i;
+        start = 1;
+      } else if (str[i + start] === str[str.length - 2 - i + end]) {
+        position = str.length - 1 - i;
+        end = -1;
       }
-      return position;
-      
+    }
   }
+  return position;
+}
+
+
+// between two sets 
+function getTotalX(a, b) {
+    // Write your code here
+    // num is between max(arr1) and min(arr2)
+    
+    const min = Math.max(...a);
+    const max = Math.min(...b);
+    let results = [];
+    
+    for(let i=min; i <= max; i++) {
+        if (a.every(element => i % element === 0) && b.every(element => element % i === 0 )) {
+            results.push(i);
+        }
+    }
+    return results.length;
+}
