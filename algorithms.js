@@ -1,4 +1,5 @@
-// hackerrank problem solving
+// hackerrank problem solving  
+// EASY
 
 // solve me first
 function solveMeFirst(a, b) {
@@ -33,6 +34,21 @@ function compareTriplets(a, b) {
 function aVeryBigSum(ar) {
   // Write your code here
   return ar.reduce((prev, curr) => prev + curr);
+}
+
+
+// diagonal difference
+function diagonalDifference(arr) {
+  // Write your code here
+  
+  let sum1 = null;
+  let sum2 = null;
+  
+  for(let i = 0; i<arr.length; i++) {
+      sum1 += arr[i][i];
+      sum2 += arr[arr.length-1-i][i];
+  }    
+  return Math.abs(sum1-sum2);
 }
 
 
