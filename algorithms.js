@@ -1,3 +1,17 @@
+// hackerrank problem solving
+
+// solve me first
+function solveMeFirst(a, b) {
+  // Hint: Type return a+b below   
+  return a+b;
+  // bruh
+}
+
+// simple array sum
+function simpleArraySum(ar) {
+  return ar.reduce((prev, curr) => prev + curr)
+}
+
 // algorithmic challenges from the hackerrank 1 Month interview prep
 // week 2
 
@@ -106,6 +120,7 @@ function sumXor(n) {
   // ---> see bitwise operator ^ for criteria
   // 10010
   // 0**0* -> 2 of the power of 3
+
   const binary = n.toString(2);
   const zeros = binary.split("0").length - 1;
 
@@ -118,6 +133,7 @@ function sumXor(n) {
   }
 }
 
+// MOCK TEST 2
 //palindrome index ONLY MEETING 12  OF 14 TEST CASES
 function palindromeIndex(str) {
   // Write your code here
@@ -140,20 +156,22 @@ function palindromeIndex(str) {
   return position;
 }
 
-
-// between two sets 
+// between two sets
 function getTotalX(a, b) {
-    // Write your code here
-    // num is between max(arr1) and min(arr2)
-    
-    const min = Math.max(...a);
-    const max = Math.min(...b);
-    let results = [];
-    
-    for(let i=min; i <= max; i++) {
-        if (a.every(element => i % element === 0) && b.every(element => element % i === 0 )) {
-            results.push(i);
-        }
+  // Write your code here
+  // num is between max(arr1) and min(arr2)
+
+  const min = Math.max(...a);
+  const max = Math.min(...b);
+  let results = [];
+
+  for (let i = min; i <= max; i++) {
+    if (
+      a.every(element => i % element === 0) &&
+      b.every(element => element % i === 0)
+    ) {
+      results.push(i);
     }
-    return results.length;
+  }
+  return results.length;
 }
