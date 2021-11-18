@@ -2,14 +2,30 @@
 
 // solve me first
 function solveMeFirst(a, b) {
-  // Hint: Type return a+b below   
-  return a+b;
+  // Hint: Type return a+b below
+  return a + b;
   // bruh
 }
 
 // simple array sum
 function simpleArraySum(ar) {
-  return ar.reduce((prev, curr) => prev + curr)
+  return ar.reduce((prev, curr) => prev + curr);
+}
+
+// compare the triplets
+function compareTriplets(a, b) {
+  let aScore = 0;
+  let bScore = 0;
+
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] > b[i]) {
+      aScore++;
+    } else if (b[i] > a[i]) {
+      bScore++;
+    }
+  }
+  let result = [aScore, bScore];
+  return result;
 }
 
 // algorithmic challenges from the hackerrank 1 Month interview prep
