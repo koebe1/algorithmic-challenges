@@ -28,6 +28,15 @@ function compareTriplets(a, b) {
   return result;
 }
 
+
+// a very big sum
+function aVeryBigSum(ar) {
+  // Write your code here
+  return ar.reduce((prev, curr) => prev + curr);
+}
+
+
+
 // algorithmic challenges from the hackerrank 1 Month interview prep
 // week 2
 
