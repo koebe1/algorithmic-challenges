@@ -1,4 +1,4 @@
-// hackerrank problem solving  
+// hackerrank problem solving
 // EASY
 
 // solve me first
@@ -29,29 +29,49 @@ function compareTriplets(a, b) {
   return result;
 }
 
-
 // a very big sum
 function aVeryBigSum(ar) {
   // Write your code here
   return ar.reduce((prev, curr) => prev + curr);
 }
 
-
 // diagonal difference
 function diagonalDifference(arr) {
   // Write your code here
-  
+
   let sum1 = null;
   let sum2 = null;
-  
-  for(let i = 0; i<arr.length; i++) {
-      sum1 += arr[i][i];
-      sum2 += arr[arr.length-1-i][i];
-  }    
-  return Math.abs(sum1-sum2);
+
+  for (let i = 0; i < arr.length; i++) {
+    sum1 += arr[i][i];
+    sum2 += arr[arr.length - 1 - i][i];
+  }
+  return Math.abs(sum1 - sum2);
 }
 
+// plus minus
+function plusMinus(arr) {
+  // Write your code here
+  let neg = null;
+  let pos = null;
+  let zero = null;
 
+  arr.forEach(e => {
+    if (e < 0) {
+      neg++;
+    } else if (e > 0) {
+      pos++;
+    } else if (e === 0) {
+      zero++;
+    }
+  });
+
+  const sum = neg + pos + zero;
+
+  console.log((pos / sum).toFixed(6));
+  console.log((neg / sum).toFixed(6));
+  console.log((zero / sum).toFixed(6));
+}
 
 // algorithmic challenges from the hackerrank 1 Month interview prep
 // week 2
