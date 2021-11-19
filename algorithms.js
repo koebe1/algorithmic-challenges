@@ -74,6 +74,10 @@ function plusMinus(arr) {
 }
 
 // staircase
+// alternativ
+// for (let i = 0; i < n; i++) {
+//  console.log("#".repeat(i).padStart(n));
+// }
 function staircase(n) {
   // Write your code here
   // rows
@@ -88,6 +92,28 @@ function staircase(n) {
     }
     console.log(row);
   }
+}
+
+// min-max sum
+function miniMaxSum(arr) {
+  // Write your code here
+
+  let min = Math.min(...arr);
+  let max = Math.max(...arr);
+
+  let minIndex = arr.indexOf(min);
+  let maxIndex = arr.indexOf(max);
+
+  let maxArr = [...arr];
+  maxArr.splice(minIndex, 1);
+
+  let minArr = [...arr];
+  minArr.splice(maxIndex, 1);
+
+  let minSum = minArr.reduce((prev, curr) => prev + curr);
+  let maxSum = maxArr.reduce((prev, curr) => prev + curr);
+
+  console.log(minSum, maxSum);
 }
 
 // algorithmic challenges from the hackerrank 1 Month interview prep
