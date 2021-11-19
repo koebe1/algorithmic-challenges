@@ -73,6 +73,23 @@ function plusMinus(arr) {
   console.log((zero / sum).toFixed(6));
 }
 
+// staircase
+function staircase(n) {
+  // Write your code here
+  // rows
+  for (let i = 0; i < n; i++) {
+    let row = "";
+    for (let j = 0; j < n; j++) {
+      if (n - 1 - i > j) {
+        row += " ";
+      } else {
+        row += "#";
+      }
+    }
+    console.log(row);
+  }
+}
+
 // algorithmic challenges from the hackerrank 1 Month interview prep
 // week 2
 
