@@ -170,6 +170,33 @@ function reverseArray(a) {
   return a.reverse();
 }
 
+// 2D array - DS
+function hourglassSum(arr) {
+  // Write your code here
+  // i+2 <= i.length-1 && j+2 <= j.length-1
+
+  let sums = [];
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = 0; j < arr.length - 1; j++) {
+      // just testing for i would be enough since arr is 6x6
+      // testing for both makes it also work for asymmetrical 2d arrays
+      if (i + 2 <= arr.length - 1 && j + 2 <= arr[0].length - 1) {
+        let sum =
+          arr[i][j] +
+          arr[i][j + 1] +
+          arr[i][j + 2] +
+          arr[i + 1][j + 1] +
+          arr[i + 2][j] +
+          arr[i + 2][j + 1] +
+          arr[i + 2][j + 2];
+        sums.push(sum);
+      }
+    }
+  }
+  return Math.max(...sums);
+}
+
 // algorithmic challenges from the hackerrank 1 Month interview prep
 // week 2
 
