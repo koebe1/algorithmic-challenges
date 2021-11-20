@@ -156,6 +156,20 @@ function timeConversion(s) {
     :${seconds.toString().padStart(2, "0")}`;
 }
 
+// arrays -ds
+function reverseArray(a) {
+  // Write your code here
+
+  /* let result = [];
+  a.forEach(e => {
+      result.unshift(e);
+  })
+  return result
+  */
+
+  return a.reverse();
+}
+
 // algorithmic challenges from the hackerrank 1 Month interview prep
 // week 2
 
