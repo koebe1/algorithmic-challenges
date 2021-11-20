@@ -116,6 +116,46 @@ function miniMaxSum(arr) {
   console.log(minSum, maxSum);
 }
 
+// LAST
+// birthday candles
+function birthdayCakeCandles(candles) {
+  // Write your code here
+
+  let tallest = Math.max(...candles);
+
+  let result = null;
+
+  candles.forEach(e => {
+    if (e === tallest) {
+      result++;
+    }
+  });
+  return result;
+}
+
+// time conversion
+function timeConversion(s) {
+  // Write your code here
+  // AM 12:00:00 - 11:59:00  ---> 00:00:00 - 11:59:00
+  // PM 12:00:00 - 11:59:00  ---> 12:00:00  - 23:59:00
+
+  let result = s.split("");
+  let cycle = result.splice(8, 2).join("");
+  let hours = parseInt(result.splice(0, 2).join(""), 10);
+  let minutes = parseInt(result.splice(1, 2).join(""), 10);
+  let seconds = parseInt(result.splice(2, 2).join(""), 10);
+
+  if (cycle === "AM" && hours === 12) {
+    hours = hours - 12;
+  } else if (cycle === "PM" && hours !== 12) {
+    hours += 12;
+  }
+
+  return `${hours.toString().padStart(2, "0")}
+    :${minutes.toString().padStart(2, "0")}
+    :${seconds.toString().padStart(2, "0")}`;
+}
+
 // algorithmic challenges from the hackerrank 1 Month interview prep
 // week 2
 
