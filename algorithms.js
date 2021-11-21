@@ -277,6 +277,33 @@ function breakingRecords(scores) {
 
   return [maxCounter, minCounter];
 }
+
+// apple and orange
+
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+  // Write your code here
+
+  let appleCounter = 0;
+  let orangeCounter = 0;
+
+  apples.forEach(apple => {
+    // spot where apple is landing
+    let location = a + apple;
+    if (location >= s && location <= t) {
+      appleCounter++;
+    }
+  });
+  oranges.forEach(orange => {
+    // spot where orange is landing
+    let location = b + orange;
+    if (location >= s && location <= t) {
+      orangeCounter++;
+    }
+  });
+  console.log(appleCounter);
+  console.log(orangeCounter);
+}
+
 // NEW CODE ABOVE
 // algorithmic challenges from the hackerrank 1 Month interview prep
 // week 2
