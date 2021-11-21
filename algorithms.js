@@ -326,6 +326,13 @@ function birthday(s, d, m) {
   return result;
 }
 
+// left rotation
+function rotateLeft(d, arr) {
+  // Write your code here
+  let left = arr.splice(0, d);
+  return [...arr, ...left];
+}
+
 // NEW CODE ABOVE
 // algorithmic challenges from the hackerrank 1 Month interview prep
 // week 2
