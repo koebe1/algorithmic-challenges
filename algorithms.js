@@ -200,7 +200,7 @@ function hourglassSum(arr) {
 // grading students
 function gradingStudents(grades) {
   // Write your code here
-  for (let i = 0; i < grades.length ; i++) {
+  for (let i = 0; i < grades.length; i++) {
     // less than 38 is failing grade --> no rounding
     if (grades[i] >= 38) {
       // get next higher multiple of 5
@@ -215,6 +215,35 @@ function gradingStudents(grades) {
     }
   }
   return grades;
+}
+
+// number line jumps
+// x1 + y * v1 = x2 + y * v2  -> / - v2 * y
+// x1 + y * v1 - y * v2 = x2 -> / - x1
+// y * v1 - y * v2 = x2 - x1 / factore out y
+// y * (v1-v2) = x2 - x1
+// y = (x2 - x1) / (v1 - v2)
+// --> doesen't handle zero cases
+
+// total BS solution
+function kangaroo(x1, v1, x2, v2) {
+  if (x1 === 0 && x2 !== 0) {
+    if (v1 > v2) {
+      return "YES";
+    } else {
+      return "NO";
+    }
+  }
+
+  if (x2 > x1 && v2 > v1) {
+    return "NO";
+  }
+
+  if (((x2 - x1) / (v1 - v2)) % 1 === 0) {
+    return "YES";
+  } else {
+    return "NO";
+  }
 }
 
 // NEW CODE ABOVE
