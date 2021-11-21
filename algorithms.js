@@ -333,6 +333,24 @@ function rotateLeft(d, arr) {
   return [...arr, ...left];
 }
 
+// sparse arrays
+function matchingStrings(strings, queries) {
+  // Write your code here
+
+  let results = [];
+
+  queries.forEach(query => {
+    let counter = 0;
+    strings.forEach(string => {
+      if (query === string) {
+        counter++;
+      }
+    });
+    results.push(counter);
+  });
+  return results;
+}
+
 // NEW CODE ABOVE
 // algorithmic challenges from the hackerrank 1 Month interview prep
 // week 2
