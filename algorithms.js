@@ -218,27 +218,19 @@ function gradingStudents(grades) {
 }
 
 // number line jumps
-// x1 + y * v1 = x2 + y * v2  -> / - v2 * y
-// x1 + y * v1 - y * v2 = x2 -> / - x1
-// y * v1 - y * v2 = x2 - x1 / factore out y
-// y * (v1-v2) = x2 - x1
-// y = (x2 - x1) / (v1 - v2)
-// --> doesen't handle zero cases
-
-// total BS solution
 function kangaroo(x1, v1, x2, v2) {
-  if (x1 === 0 && x2 !== 0) {
-    if (v1 > v2) {
-      return "YES";
-    } else {
-      return "NO";
-    }
-  }
-
-  if (x2 > x1 && v2 > v1) {
+  // handling case where one kangaroo starts ahead && is faster
+  if ((x2 > x1 && v2 > v1) || (x1 > x2 && v1 > v2)) {
     return "NO";
   }
 
+  // x1 + y * v1 = x2 + y * v2  -> / - v2 * y
+  // x1 + y * v1 - y * v2 = x2 -> / - x1
+  // y * v1 - y * v2 = x2 - x1 / factore out y
+  // y * (v1-v2) = x2 - x1
+  // y = (x2 - x1) / (v1 - v2)
+
+  // evaluated term after y (number of jumps) and check if y is a whole number
   if (((x2 - x1) / (v1 - v2)) % 1 === 0) {
     return "YES";
   } else {
