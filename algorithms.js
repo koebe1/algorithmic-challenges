@@ -238,6 +238,24 @@ function kangaroo(x1, v1, x2, v2) {
   }
 }
 
+// between two sets
+function getTotalX(a, b) {
+  // Write your code here
+
+  let lower = Math.max(...a);
+  let upper = Math.min(...b);
+
+  let counter = 0;
+
+  // test all numbers bewteen lower and upper bound
+  for (let i = lower; i <= upper; i++) {
+    if (a.every(e => i % e === 0) && b.every(e => e % i === 0)) {
+      counter++;
+    }
+  }
+  return counter;
+}
+
 // NEW CODE ABOVE
 // algorithmic challenges from the hackerrank 1 Month interview prep
 // week 2
