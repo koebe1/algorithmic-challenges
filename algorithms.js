@@ -351,6 +351,31 @@ function matchingStrings(strings, queries) {
   return results;
 }
 
+// array manipulation
+function arrayManipulation(n, queries) {
+  // Write your code here
+
+  let arr = Array(n).fill(0);
+
+  queries.forEach(querie => {
+    arr[querie[0] - 1] += querie[2];
+    arr[querie[1]] -= querie[2];
+  });
+
+  let maxCounter = 0;
+  let counter = 0;
+
+  arr.forEach(e => {
+    counter += e;
+    if (counter > maxCounter) {
+      maxCounter = counter;
+    }
+  });
+
+  console.log(arr);
+  return maxCounter;
+}
+
 // NEW CODE ABOVE
 // algorithmic challenges from the hackerrank 1 Month interview prep
 // week 2
