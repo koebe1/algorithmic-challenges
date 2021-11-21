@@ -256,6 +256,27 @@ function getTotalX(a, b) {
   return counter;
 }
 
+// breaking the record
+function breakingRecords(scores) {
+  // Write your code here
+
+  let minNum = scores[0];
+  let maxNum = scores[0];
+  let minCounter = 0;
+  let maxCounter = 0;
+
+  scores.forEach(e => {
+    if (e < minNum) {
+      minNum = e;
+      minCounter++;
+    } else if (e > maxNum) {
+      maxNum = e;
+      maxCounter++;
+    }
+  });
+
+  return [maxCounter, minCounter];
+}
 // NEW CODE ABOVE
 // algorithmic challenges from the hackerrank 1 Month interview prep
 // week 2
