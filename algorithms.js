@@ -197,6 +197,27 @@ function hourglassSum(arr) {
   return Math.max(...sums);
 }
 
+// grading students
+function gradingStudents(grades) {
+  // Write your code here
+  for (let i = 0; i < grades.length ; i++) {
+    // less than 38 is failing grade --> no rounding
+    if (grades[i] >= 38) {
+      // get next higher multiple of 5
+      let multipleOf5 = grades[i];
+      while (multipleOf5 % 5 !== 0) {
+        multipleOf5++;
+      }
+      // if next higher multiple of 5  - grades[i] < 3
+      if (mutlipleOf5 - grades[i] < 3) {
+        grades[i] = multipleOf5;
+      }
+    }
+  }
+  return grades;
+}
+
+// NEW CODE ABOVE
 // algorithmic challenges from the hackerrank 1 Month interview prep
 // week 2
 
