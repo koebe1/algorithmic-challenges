@@ -304,6 +304,28 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
   console.log(orangeCounter);
 }
 
+// subarray division
+function birthday(s, d, m) {
+  // Write your code here
+
+  // conditions:
+  // segment.length === m
+  // segment[0] + segment[1] === d
+
+  let result = 0;
+
+  for (let i = 0; i <= s.length - m; i++) {
+    let arr = [...s];
+    let segment = arr.splice(i, m);
+    let count = segment.reduce((prev, curr) => prev + curr);
+
+    if (count === d) {
+      result++;
+    }
+  }
+  return result;
+}
+
 // NEW CODE ABOVE
 // algorithmic challenges from the hackerrank 1 Month interview prep
 // week 2
