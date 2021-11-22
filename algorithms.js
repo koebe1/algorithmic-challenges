@@ -388,8 +388,15 @@ function printLinkedList(head) {
   printLinkedList(head.next);
 }
 
-// non recursiv version
+// insert node at beginning of linked list
+function insertNodeAtHead(head, data) {
+  const linkedList = {
+    data: data,
+    next: head
+  };
 
+  return linkedList;
+}
 
 // NEW CODE ABOVE
 // algorithmic challenges from the hackerrank 1 Month interview prep
