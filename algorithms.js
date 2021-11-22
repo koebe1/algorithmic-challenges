@@ -376,6 +376,21 @@ function arrayManipulation(n, queries) {
   return maxCounter;
 }
 
+// print elements of a linked list
+// recursiv version
+function printLinkedList(head) {
+  if (head.next === null) {
+    console.log(head.data);
+    return;
+  }
+
+  console.log(head.data);
+  printLinkedList(head.next);
+}
+
+// non recursiv version
+
+
 // NEW CODE ABOVE
 // algorithmic challenges from the hackerrank 1 Month interview prep
 // week 2
