@@ -398,6 +398,22 @@ function insertNodeAtHead(head, data) {
   return linkedList;
 }
 
+// divisible sum pair
+function divisibleSumPairs(n, k, ar) {
+  // Write your code here
+
+  let counter = 0;
+
+  for (let i = 0; i < ar.length; i++) {
+    for (let j = 0; j < ar.length; j++) {
+      if (i < j && (ar[i] + ar[j]) % k === 0) {
+        counter++;
+      }
+    }
+  }
+  return counter;
+}
+
 // NEW CODE ABOVE
 // algorithmic challenges from the hackerrank 1 Month interview prep
 // week 2
