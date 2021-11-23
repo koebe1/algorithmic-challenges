@@ -414,6 +414,18 @@ function divisibleSumPairs(n, k, ar) {
   return counter;
 }
 
+// migratory birds
+function migratoryBirds(arr) {
+  // Write your code here
+  let sighting = Array(6).fill(0);
+
+  for (let i = 0; i < arr.length; i++) {
+    sighting[arr[i]]++;
+  }
+  // works because indexOf returns the first match -> sightings is ordered
+  return sighting.indexOf(Math.max(...sighting));
+}
+
 // NEW CODE ABOVE
 // algorithmic challenges from the hackerrank 1 Month interview prep
 // week 2
