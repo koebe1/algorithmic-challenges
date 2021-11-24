@@ -433,8 +433,26 @@ function bonAppetit(bill, k, b) {
   if (sharedBill / 2 === b) {
     console.log("Bon Appetit");
   } else {
-    console.log(b - (sharedBill / 2));
+    console.log(b - sharedBill / 2);
   }
+}
+
+// sales by match
+function sockMerchant(n, ar) {
+  // Write your code here
+  let sockList = [...new Set(ar)];
+  let result = 0;
+
+  sockList.forEach(kind => {
+    let counter = 0;
+    ar.forEach(sock => {
+      if (kind === sock) {
+        counter++;
+      }
+    });
+    result += Math.floor(counter / 2);
+  });
+  return result;
 }
 
 // NEW CODE ABOVE
