@@ -455,6 +455,28 @@ function sockMerchant(n, ar) {
   return result;
 }
 
+// drawing book
+function pageCount(n, p) {
+  // Write your code here
+  // book has even number of pages
+  if (n % 2 === 0) {
+    if (p === 1 || p === n) {
+      return 0;
+    } else if (p === n - 1) {
+      return 1;
+    } else {
+      return Math.min(Math.floor(p / 2), Math.floor((n - p) / 2));
+    }
+    // book has uneven number of pages
+  } else {
+    if (p === 1 || p === n || p === n - 1) {
+      return 0;
+    } else {
+      return Math.min(Math.floor(p / 2), Math.floor((n - p) / 2));
+    }
+  }
+}
+
 // NEW CODE ABOVE
 // algorithmic challenges from the hackerrank 1 Month interview prep
 // week 2
