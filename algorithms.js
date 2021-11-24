@@ -116,7 +116,6 @@ function miniMaxSum(arr) {
   console.log(minSum, maxSum);
 }
 
-// LAST
 // birthday candles
 function birthdayCakeCandles(candles) {
   // Write your code here
@@ -424,6 +423,18 @@ function migratoryBirds(arr) {
   }
   // works because indexOf returns the first match -> sightings is ordered
   return sighting.indexOf(Math.max(...sighting));
+}
+
+// bill division
+function bonAppetit(bill, k, b) {
+  // Write your code here
+  bill.splice(k, 1);
+  const sharedBill = bill.reduce((prev, curr) => prev + curr);
+  if (sharedBill / 2 === b) {
+    console.log("Bon Appetit");
+  } else {
+    console.log(b - (sharedBill / 2));
+  }
 }
 
 // NEW CODE ABOVE
