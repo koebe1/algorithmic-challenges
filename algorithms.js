@@ -510,6 +510,30 @@ function countingValleys(steps, path) {
   return valleys;
 }
 
+// electronics shop
+function getMoneySpent(keyboards, drives, b) {
+  /*
+   * Write your code here.
+   */
+  keyboards = keyboards.sort((a, b) => a - b);
+  drives = drives.sort((a, b) => a - b);
+  let comb = [];
+
+  if (keyboards[0] + drives[0] > b) {
+    return -1;
+  }
+
+  keyboards.forEach(keyboard => {
+    drives.forEach(drive => {
+      if (keyboard + drive <= b) {
+        comb.push(keyboard + drive);
+      }
+    });
+  });
+
+  return Math.max(...comb);
+}
+
 // NEW CODE ABOVE
 // algorithmic challenges from the hackerrank 1 Month interview prep
 // week 2
