@@ -534,6 +534,18 @@ function getMoneySpent(keyboards, drives, b) {
   return Math.max(...comb);
 }
 
+// cats and a mouse
+function catAndMouse(x, y, z) {
+  if (Math.abs(z - x) === Math.abs(z - y)) {
+    return "Mouse C";
+  } else if (Math.abs(z - x) < Math.abs(z - y)) {
+    return "Cat A";
+  } else {
+    return "Cat B";
+  }
+}
+
+
 // NEW CODE ABOVE
 // algorithmic challenges from the hackerrank 1 Month interview prep
 // week 2
