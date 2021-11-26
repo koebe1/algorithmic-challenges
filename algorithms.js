@@ -56,7 +56,7 @@ function plusMinus(arr) {
   let pos = null;
   let zero = null;
 
-  arr.forEach(e => {
+  arr.forEach((e) => {
     if (e < 0) {
       neg++;
     } else if (e > 0) {
@@ -124,7 +124,7 @@ function birthdayCakeCandles(candles) {
 
   let result = null;
 
-  candles.forEach(e => {
+  candles.forEach((e) => {
     if (e === tallest) {
       result++;
     }
@@ -248,7 +248,7 @@ function getTotalX(a, b) {
 
   // test all numbers bewteen lower and upper bound
   for (let i = lower; i <= upper; i++) {
-    if (a.every(e => i % e === 0) && b.every(e => e % i === 0)) {
+    if (a.every((e) => i % e === 0) && b.every((e) => e % i === 0)) {
       counter++;
     }
   }
@@ -264,7 +264,7 @@ function breakingRecords(scores) {
   let minCounter = 0;
   let maxCounter = 0;
 
-  scores.forEach(e => {
+  scores.forEach((e) => {
     if (e < minNum) {
       minNum = e;
       minCounter++;
@@ -285,14 +285,14 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
   let appleCounter = 0;
   let orangeCounter = 0;
 
-  apples.forEach(apple => {
+  apples.forEach((apple) => {
     // spot where apple is landing
     let location = a + apple;
     if (location >= s && location <= t) {
       appleCounter++;
     }
   });
-  oranges.forEach(orange => {
+  oranges.forEach((orange) => {
     // spot where orange is landing
     let location = b + orange;
     if (location >= s && location <= t) {
@@ -338,9 +338,9 @@ function matchingStrings(strings, queries) {
 
   let results = [];
 
-  queries.forEach(query => {
+  queries.forEach((query) => {
     let counter = 0;
-    strings.forEach(string => {
+    strings.forEach((string) => {
       if (query === string) {
         counter++;
       }
@@ -356,7 +356,7 @@ function arrayManipulation(n, queries) {
 
   let arr = Array(n).fill(0);
 
-  queries.forEach(querie => {
+  queries.forEach((querie) => {
     arr[querie[0] - 1] += querie[2];
     arr[querie[1]] -= querie[2];
   });
@@ -364,7 +364,7 @@ function arrayManipulation(n, queries) {
   let maxCounter = 0;
   let counter = 0;
 
-  arr.forEach(e => {
+  arr.forEach((e) => {
     counter += e;
     if (counter > maxCounter) {
       maxCounter = counter;
@@ -391,7 +391,7 @@ function printLinkedList(head) {
 function insertNodeAtHead(head, data) {
   const linkedList = {
     data: data,
-    next: head
+    next: head,
   };
 
   return linkedList;
@@ -443,9 +443,9 @@ function sockMerchant(n, ar) {
   let sockList = [...new Set(ar)];
   let result = 0;
 
-  sockList.forEach(kind => {
+  sockList.forEach((kind) => {
     let counter = 0;
-    ar.forEach(sock => {
+    ar.forEach((sock) => {
       if (kind === sock) {
         counter++;
       }
@@ -523,8 +523,8 @@ function getMoneySpent(keyboards, drives, b) {
     return -1;
   }
 
-  keyboards.forEach(keyboard => {
-    drives.forEach(drive => {
+  keyboards.forEach((keyboard) => {
+    drives.forEach((drive) => {
       if (keyboard + drive <= b) {
         comb.push(keyboard + drive);
       }
@@ -545,6 +545,50 @@ function catAndMouse(x, y, z) {
   }
 }
 
+// picking numbers
+function pickingNumbers(a) {
+  // Write your code here
+  let maxLength = 0;
+
+  // iterate over every element except the last
+  let counter = 0;
+  for (let i = 0; i < a.length - 1; i++) {
+    if (Math.abs(a[i] - [i + 1]) <= 1) {
+      counter++;
+      if (counter > maxLength) {
+        maxLength = counter;
+      }
+    } else {
+      counter = 0;
+    }
+  }
+  return maxLength;
+}
+
+//  picking numbers
+function pickingNumbers(a) {
+  let maxLength = 0;
+
+  for (let i = 0; i < a.length; i++) {
+    let sub = [];
+    sub.push(a[i]);
+
+    for (let j = 0; j < a.length; j++) {
+      let min = Math.min(...sub);
+      let max = Math.max(...sub);
+      if (Math.abs(a[i] - a[j]) <= 1) {
+        if (Math.abs(a[j] - min) <= 1 && Math.abs(a[j] - max) <= 1) {
+          sub.push(a[j]);
+        }
+      }
+    }
+    if (sub.length > maxLength) {
+      maxLength = sub.length;
+    }
+  }
+
+  return maxLength - 1;
+}
 
 // NEW CODE ABOVE
 // algorithmic challenges from the hackerrank 1 Month interview prep
@@ -555,9 +599,9 @@ function gridChallenge(grid) {
   // Write your code here
   let arr = [];
   let result = "YES";
-  grid.forEach(str => arr.push([...str]));
+  grid.forEach((str) => arr.push([...str]));
 
-  arr.forEach(array => array.sort());
+  arr.forEach((array) => array.sort());
 
   for (let i = 0; i < arr.length - 1; i++) {
     for (let j = 0; j < arr[i].length; j++) {
@@ -702,8 +746,8 @@ function getTotalX(a, b) {
 
   for (let i = min; i <= max; i++) {
     if (
-      a.every(element => i % element === 0) &&
-      b.every(element => element % i === 0)
+      a.every((element) => i % element === 0) &&
+      b.every((element) => element % i === 0)
     ) {
       results.push(i);
     }
