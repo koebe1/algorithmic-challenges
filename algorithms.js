@@ -590,6 +590,31 @@ function pickingNumbers(a) {
   return maxLength - 1;
 }
 
+// design pdf viewer
+function designerPdfViewer(h, word) {
+  // generate alphabet
+  const alpha = Array.from(Array(26)).map((e, i) => i + 65);
+  const alphabet = alpha.map((x) => String.fromCharCode(x).toLocaleLowerCase());
+
+  // get heights of letters of word
+  const mapHeightToLetter = (word, h, alphabet) => {
+    let heights = [];
+    for (let letter of word) {
+      for (let i = 0; i < alphabet.length; i++) {
+        if (alphabet[i] === letter) {
+          heights.push(h[i]);
+        }
+      }
+    }
+    return heights;
+  };
+
+  const heights = mapHeightToLetter(word, h, alphabet);
+  const maxHeight = Math.max(...heights);
+
+  return maxHeight * heights.length;
+}
+
 // NEW CODE ABOVE
 // algorithmic challenges from the hackerrank 1 Month interview prep
 // week 2
